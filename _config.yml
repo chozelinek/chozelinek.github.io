@@ -16,13 +16,13 @@ author:
 
 include:
     - "_pages"
-    - ".nojekyll"
 
 exclude:
     - LICENSE
     - README.md
     - Gemfile
     - Gemfile.lock
+    - ".nojekyll"
 
 defaults:
   # _pages
