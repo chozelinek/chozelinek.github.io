@@ -1,0 +1,34 @@
+theme: minimal-mistakes-jekyll
+locale: "en-US"
+title: "José Manuel Martínez Martínez"
+name: "José Manuel Martínez Martínez"
+description: "(computational) linguist & translator"
+
+author:
+  name: "José Manuel Martínez Martínez"
+  avatar: "https://avatars0.githubusercontent.com/u/2077497?v=3&s=460"
+  bio: "Born in Valencia, Spain. Currently in Saarbrücken, Germany. Passionate about languages, coding, climbing, performing arts, and travelling."
+  email: # optional
+  uri: "https://chozelinek.github.io"
+  github: chozelinek
+  twitter: chozelinek
+  linkedin: # optional
+
+include:
+    - "_pages"
+    - ".nojekyll"
+
+exclude:
+    - LICENSE
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
