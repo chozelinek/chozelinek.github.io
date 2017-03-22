@@ -335,7 +335,7 @@ Automagically we switch to branch `master`.
 We just add all, commit locally, and push the static generated files to the master branch:
 
 ```shell
-run git add -A && git commit -m "[another_message_referencing_the_first_message]" && git push
+git add -A && git commit -m "[another_message_referencing_the_first_message]" && git push
 ```
 
 ## Bibliographies
