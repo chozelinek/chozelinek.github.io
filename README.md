@@ -338,6 +338,52 @@ We just add all, commit locally, and push the static generated files to the mast
 run git add -A && git commit -m "[another_message_referencing_the_first_message]" && git push
 ```
 
+## Bibliographies
+
+Use jekyll-scholar <https://github.com/inukshuk/jekyll-scholar>
+
+Add to `Gemfile`:
+
+```
+gem 'jekyll-scholar'
+```
+
+Update the bundle:
+
+```shell
+brew unlink xz; bundle update; brew link xz
+```
+
+Add the following content to `_config.yml`:
+
+```yaml
+gems: ['jekyll/scholar']
+
+scholar:
+    style: apa
+    source: ./_bibliography
+    bibliography: MyPublications.bib
+    sort_by: [year, month]
+    order: descending
+```
+
+Create folder called `_bibliography`:
+
+```shell
+mkdir -p _bibliography
+```
+
+Copy your most recent bibliography version into this folder:
+
+```shell
+cp ~/Dropbox/BIBLIOGRAPHY/BibTeX/MyPublications.bib ./_bibliography/
+```
+
+Create the page `_pages/publications.md`.
+
+Include the link to a downlodable PDF version in `assets/publications.pdf`.
+
+
 ## Frequently used Jekyll commands
 
 Update the bundle:

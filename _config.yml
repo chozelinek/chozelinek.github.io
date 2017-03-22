@@ -22,7 +22,7 @@ exclude:
     - README.md
     - Gemfile
     - Gemfile.lock
-    - ".nojekyll"
+    - .nojekyll
 
 defaults:
   # _pages
@@ -32,3 +32,12 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+gems: ['jekyll/scholar']
+
+scholar:
+    style: apa
+    source: ./_bibliography
+    bibliography: MyPublications.bib
+    sort_by: [year, month]
+    order: descending
