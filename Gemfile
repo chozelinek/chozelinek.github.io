@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
-gem 'github-pages'
+
 gem 'minimal-mistakes-jekyll'
-gem 'jekyll-scholar'
+group :jekyll_plugins do
+    gem 'github-pages'
+    gem 'jekyll-scholar'
+    gem 'jekyll-compose'
+end
