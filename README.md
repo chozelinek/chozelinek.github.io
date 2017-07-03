@@ -290,53 +290,6 @@ Push changes:
 git push
 ```
 
-## Adding content to the website: the typical workflow
-
-Go to the local repo:
-
-```shell
-cd ~/Projects/chozelinek.github.io
-```
-
-Switch to the source branch:
-
-```shell
-git checkout source
-```
-
-Get changes (unlikely):
-
-```shell
-git pull
-```
-
-Modify/add whatever locally
-
-Then, add all, commit to local, and push to remote:
-
-```shell
-git add -A && git commit -m "[message]" && git push
-```
-
-Now build:
-
-```shell
-bundle exec jekyll build
-```
-
-Change directory to `_site`:
-
-```shell
-cd _site
-```
-
-Automagically we switch to branch `master`.
-
-We just add all, commit locally, and push the static generated files to the master branch:
-
-```shell
-git add -A && git commit -m "[another_message_referencing_the_first_message]" && git push
-```
 
 ## Bibliographies
 
@@ -496,6 +449,54 @@ Publish the draft:
 
 ```
 bundle exec jekyll publish _drafts/my-new-draft.md
+```
+
+## Adding content to the website: the typical workflow
+
+Go to the local repo:
+
+```shell
+cd ~/Projects/chozelinek.github.io
+```
+
+Switch to the source branch:
+
+```shell
+git checkout source
+```
+
+Get changes (unlikely):
+
+```shell
+git pull
+```
+
+Modify/add whatever locally
+
+Then, add all, commit to local, and push to remote:
+
+```shell
+git add -A && git commit -m "[message]" && git push
+```
+
+Now build:
+
+```shell
+bundle exec jekyll build
+```
+
+Change directory to `_site`:
+
+```shell
+cd _site
+```
+
+Automagically we switch to branch `master`.
+
+We just add all, commit locally, and push the static generated files to the master branch:
+
+```shell
+git add -A && git commit -m "[another_message_referencing_the_first_message]" && git push
 ```
 
 ## Frequently used Jekyll commands
