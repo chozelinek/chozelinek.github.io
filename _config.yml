@@ -32,8 +32,27 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+    #   comments: true
+      share: true
+      related: true
+  # _archives
+  - scope:
+      path: ""
+      type: liquid
+    values:
+      author_profile: true
 
-gems: ['jekyll/scholar']
+gems:
+    - jekyll/scholar
+    - jekyll/paginate
 
 scholar:
     style: apa
@@ -41,3 +60,13 @@ scholar:
     bibliography: MyPublications.bib
     sort_by: [year, month]
     order: descending
+
+paginate: 5 # amount of posts to show
+paginate_path: /blog/page:num/
+
+category_archive:
+    type: liquid
+    path: /categories/
+tag_archive:
+    type: liquid
+    path: /tags/

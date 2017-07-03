@@ -111,8 +111,8 @@ main:
     url: /cv/
   - title: "Publications"
     url: /publications/
-  # - title: "Blog"
-  #   url: /blog/
+  - title: "Blog"
+    url: /blog/
 ```
 
 ### Pages
@@ -384,6 +384,120 @@ Create the page `_pages/publications.md`.
 Include the link to a downlodable PDF version in `assets/publications.pdf`.
 
 
+## Creating a blog
+
+### Configuration
+
+First one needs to modify the `_config.yml` file to enable a default template for blog posts. Add under defaults the following lines:
+
+```yaml
+# _posts
+- scope:
+    path: ""
+    type: posts
+  values:
+    layout: single
+    author_profile: true
+    read_time: true
+  #   comments: true
+    share: true
+    related: true
+```
+
+### Create a blog index
+
+Next create a blog index. A landing page where readers will see the latest posts published in the blog.
+
+Add the following content to `_config.yml`:
+
+```yaml
+gems:
+    - jekyll/paginate
+```
+
+```yaml
+paginate: 5
+paginate_path: /blog/page:num
+```
+
+Create the file `blog/index.html`.
+
+Add the following content:
+
+```
+---
+permalink: /blog/
+title: Blog
+tagline: All posts
+layout: home
+---
+```
+
+Add to `_data/navigation.yml` the lines:
+
+```yaml
+main:
+  - title: "Blog"
+    url: /blog/
+```
+
+> Tip: install `jekyll-compose` to ease the drafting and publishing workflow. <https://github.com/jekyll/jekyll-compose>
+
+### Working with posts
+
+To create a post just:
+
+```shell
+bundle exec jekyll post "My New Post"
+```
+
+### Organizing blog content with tags and categories
+
+<https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/>
+
+Use the basic `liquid` based `GitHub pages` compatible option.
+
+Create the file [`categories/index.html`](https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/category-archive.html).
+
+Create the file [`tags/index.html`](https://github.com/mmistakes/minimal-mistakes/blob/master/docs/_pages/tag-archive.html)
+
+Add to `_config.yml`:
+
+```yaml
+category_archive:
+    type: liquid
+    path: /categories/
+tag_archive:
+    type: liquid
+    path: /tags/
+```
+
+Finally, in order to show author information on the left add the following to `_config.yml`:
+
+```yaml
+defaults:
+  # _archives
+  - scope:
+      path: ""
+      type: liquid
+    values:
+      author_profile: true
+```
+
+### Working with drafts
+
+Create the draft:
+
+```shell
+bundle exec jekyll draft "My new draft"
+```
+
+Publish the draft:
+
+```
+bundle exec jekyll publish _drafts/my-new-draft.md
+```
+
 ## Frequently used Jekyll commands
 
 Update the bundle:
@@ -402,4 +516,11 @@ Start the local server:
 
 ```shell
 bundle exec jekyll serve
+```
+
+With drafts:
+
+```shell
+bundle exec jekyll build --drafts
+bundle exec jekyll serve --drafts
 ```
