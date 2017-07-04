@@ -8,7 +8,7 @@ Sometimes you write or (more likely to be my case) modify already existing pytho
 
 I learned to do it. I am collecting here some notes for future reference.
 
-I followed the instructions provided in the [Python Packaging User Guide](https://packaging.python.org/tutorials/distributing-packages) from the beginning to section [Working in "Development Mode"](https://packaging.python.org/tutorials/distributing-packages/#working-in-development-mode) included. I found very enlighting Scott Torborg's tutorial [How To Package Your Python Code](https://python-packaging.readthedocs.io/en/latest/index.html).
+I followed the instructions provided in the [Python Packaging User Guide](https://packaging.python.org/tutorials/distributing-packages) from the beginning to section [Working in "Development Mode"](https://packaging.python.org/tutorials/distributing-packages/#working-in-development-mode) included. I found very enlightening Scott Torborg's tutorial [How To Package Your Python Code](https://python-packaging.readthedocs.io/en/latest/index.html).
 
 I am using [`PyCQP_interface`](https://github.com/chozelinek/PyCQP_interface) as an example of a module prepared to be distributed over GitHub.
 
