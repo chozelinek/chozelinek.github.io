@@ -8,10 +8,34 @@ I used as reference <https://help.github.com/articles/setting-up-your-github-pag
 
 ## Installing Jekyll
 
-Check whether you have Ruby 2.1.0 or higher installed:
+Change to this directory:
 
 ```shell
-ruby --version
+cd ~/Projects/chozelinek.github.io
+```
+
+Install a Ruby environment:
+
+```shell
+brew install rbenv ruby-build
+```
+
+Install the desired version of ruby in the virtual environment:
+
+```shell
+rbenv install 3.3.4
+```
+
+Set the local Ruby version:
+
+```shell
+rbvenv local 3.3.4
+```
+
+Check whether you have Ruby 3.3.4 or higher installed:
+
+```shell
+ruby -v
 ```
 
 Install Bundler (kind of ruby package manager equivalent to pip):
@@ -20,30 +44,23 @@ Install Bundler (kind of ruby package manager equivalent to pip):
 gem install bundler
 ```
 
-Create the local git repository:
-
-```shell
-mkdir -p ~/Projects/chozelinek.github.io
-```
-
-Change to this directory:
-
-```shell
-cd ~/Projects/chozelinek.github.io
-```
-
 Create a file called `Gemfile` and type the following text:
 
 ```yaml
 source 'https://rubygems.org'
-gem 'github-pages' # github-pages
-gem 'minimal-mistakes-jekyll' # theme
+
+gem 'minimal-mistakes-jekyll'
+
+group :jekyll_plugins do
+    gem 'github-pages'
+    gem 'jekyll-compose'
+end
 ```
 
-Install with the following command to avoid errors in Mac OS Sierra:
+Install with the following command:
 
 ```shell
-brew unlink xz; bundle install; brew link xz
+bundle install
 ```
 
 ## Configuring the site and setting up the structure
@@ -59,17 +76,15 @@ theme: minimal-mistakes-jekyll
 locale: "en-US"
 title: "José Manuel Martínez Martínez"
 name: "José Manuel Martínez Martínez"
-description: "(computational) linguist & translator"
+description: "data science, data engineering, AI, ML, NLP"
 
 author:
   name: "José Manuel Martínez Martínez"
   avatar: "https://avatars0.githubusercontent.com/u/2077497?v=3&s=460"
-  bio: "Born in Valencia, Spain. Currently in Saarbrücken, Germany. Passionate about languages, coding, climbing, performing arts, and travelling."
-  email: # optional
+  bio: "Born in Valencia, Spain. My professional interests include AI, ML, NLP, data, coding, languages. Can't you reach me? I'm likely spending time with my ladies, practicing outdoor sports, reading, writing, or travelling."
   uri: "https://chozelinek.github.io"
   github: chozelinek
-  twitter: chozelinek
-  linkedin: # optional
+  linkedin: josé-manuel-martínez-martínez-15b118b
 
 include:
     - "_pages"
@@ -123,40 +138,6 @@ Create folder:
 
 ```shell
 mkdir -p _pages
-```
-
-#### cv
-
-Create file:
-
-```shell
-touch _pages/cv.md
-```
-
-Add the following content:
-
-```
----
-title: My Curriculum Vitae
-permalink: /cv/
----
-```
-
-#### publications
-
-Create file:
-
-```shell
-touch _pages/publications.md
-```
-
-Add the following content:
-
-```
----
-title: My Publications
-permalink: /publications/
----
 ```
 
 ### Setting the home page
@@ -289,53 +270,6 @@ Push changes:
 ```shell
 git push
 ```
-
-
-## Bibliographies
-
-Use jekyll-scholar <https://github.com/inukshuk/jekyll-scholar>
-
-Add to `Gemfile`:
-
-```
-gem 'jekyll-scholar'
-```
-
-Update the bundle:
-
-```shell
-brew unlink xz; bundle update; brew link xz
-```
-
-Add the following content to `_config.yml`:
-
-```yaml
-gems: ['jekyll/scholar']
-
-scholar:
-    style: apa
-    source: ./_bibliography
-    bibliography: MyPublications.bib
-    sort_by: [year, month]
-    order: descending
-```
-
-Create folder called `_bibliography`:
-
-```shell
-mkdir -p _bibliography
-```
-
-Copy your most recent bibliography version into this folder:
-
-```shell
-cp ~/Dropbox/BIBLIOGRAPHY/BibTeX/MyPublications.bib ./_bibliography/
-```
-
-Create the page `_pages/publications.md`.
-
-Include the link to a downlodable PDF version in `assets/publications.pdf`.
-
 
 ## Creating a blog
 
@@ -504,7 +438,7 @@ git add -A && git commit -m "[another_message_referencing_the_first_message]" &&
 Update the bundle:
 
 ```shell
-brew unlink xz; bundle update; brew link xz
+bundle update
 ```
 
 Build the website:
