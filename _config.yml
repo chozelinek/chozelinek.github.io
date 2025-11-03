@@ -50,7 +50,7 @@ defaults:
     values:
       author_profile: true
 
-gems:
+plugins:
     - jekyll/scholar
     - jekyll/paginate
 
