@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-11-03T18:28:57+01:00</updated><id>/feed.xml</id><title type="html">José Manuel Martínez Martínez</title><subtitle>data science, data engineering, AI, ML, NLP</subtitle><author><name>José Manuel Martínez Martínez</name><uri>https://chozelinek.github.io</uri></author><entry><title type="html">Distributing Python modules for development</title><link href="/dev/2017/07/03/distributing-python-modules.html" rel="alternate" type="text/html" title="Distributing Python modules for development" /><published>2017-07-03T00:00:00+02:00</published><updated>2017-07-03T00:00:00+02:00</updated><id>/dev/2017/07/03/distributing-python-modules</id><content type="html" xml:base="/dev/2017/07/03/distributing-python-modules.html"><![CDATA[<p>Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using <code class="language-plaintext highlighter-rouge">pip</code> from <a href="https://github.com">GitHub</a>.</p>
+
+<p>I learned to do it. I am collecting here some notes for future reference.</p>
+
+<p>I followed the instructions provided in the <a href="https://packaging.python.org/tutorials/distributing-packages">Python Packaging User Guide</a> from the beginning to section <a href="https://packaging.python.org/tutorials/distributing-packages/#working-in-development-mode">Working in “Development Mode”</a> included. I found very enlightening Scott Torborg’s tutorial <a href="https://python-packaging.readthedocs.io/en/latest/index.html">How To Package Your Python Code</a>.</p>
+
+<p>I am using <a href="https://github.com/chozelinek/PyCQP_interface"><code class="language-plaintext highlighter-rouge">PyCQP_interface</code></a> as an example of a module prepared to be distributed over GitHub.</p>
+
+<p>Basically:</p>
+
+<ol>
+  <li>Produce a README file describing the package.</li>
+  <li>Produce a LICENSE file.</li>
+  <li>Copy the file <a href="https://github.com/pypa/sampleproject/blob/master/setup.py"><code class="language-plaintext highlighter-rouge">setup.py</code></a></li>
+  <li>Modify <code class="language-plaintext highlighter-rouge">setup.py</code>:
+    <ol>
+      <li>line 17, since my README file is <code class="language-plaintext highlighter-rouge">README.md</code>;</li>
+      <li>line 21, <code class="language-plaintext highlighter-rouge">PyCQP_interface</code>, the name of the module;</li>
+      <li>line 26, <code class="language-plaintext highlighter-rouge">1.0.0</code>, choose the appropriate version;</li>
+      <li>line 28, add a short description;</li>
+      <li>line 32, add the URL to the GitHub repository;</li>
+      <li>line 35, add name;</li>
+      <li>line 36, add e-mail;</li>
+      <li>line 39, license;</li>
+      <li>line 63, keywords;</li>
+      <li>line 77, required packages; and</li>
+      <li>add line 88, <code class="language-plaintext highlighter-rouge">python_requires='&gt;=3'</code> to indicate only compatible with Python 3.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Once you have <code class="language-plaintext highlighter-rouge">setup.py</code> ready, push to the repository and then install it in a local environment using:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-e</span> git+https://github.com/chozelinek/PyCQP_interface.git#egg<span class="o">=</span>pycqp-interface
+</code></pre></div></div>
+
+<p>And that’s it! If you have written a general purpose Python package and you would like to officially share it with the Python community, you should follow the instructions from the <a href="https://www.pypa.io/en/latest/">Python Packaging Authority</a> to make it available through the <a href="https://pypi.python.org/pypi">Python Package Index</a>.</p>]]></content><author><name>José Manuel Martínez Martínez</name><uri>https://chozelinek.github.io</uri></author><category term="dev" /><category term="python" /><summary type="html"><![CDATA[Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using pip from GitHub.]]></summary></entry></feed>

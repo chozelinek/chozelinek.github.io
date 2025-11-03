@@ -1,44 +1,30 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.4.1 by Michael Rose
-  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-US" class="no-js">
   <head>
     <meta charset="utf-8">
 
-<!-- begin SEO -->
-
-
-
-
-
-
-
-
-
-<title>Distributing Python modules for development  José Manuel Martínez Martínez</title>
-
-
-
-
+<!-- begin _includes/seo.html --><title>Distributing Python modules for development - José Manuel Martínez Martínez</title>
 <meta name="description" content="Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using pip from GitHub.">
 
 
+  <meta name="author" content="José Manuel Martínez Martínez">
+  
+  <meta property="article:author" content="José Manuel Martínez Martínez">
+  
 
 
-<meta name="author" content="José Manuel Martínez Martínez">
-
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="José Manuel Martínez Martínez">
 <meta property="og:title" content="Distributing Python modules for development">
-
-
-  <link rel="canonical" href="http://github.com/pages/chozelinek/chozelinek.github.io/dev/2017/07/03/distributing-python-modules.html">
-  <meta property="og:url" content="http://github.com/pages/chozelinek/chozelinek.github.io/dev/2017/07/03/distributing-python-modules.html">
-
+<meta property="og:url" content="/dev/2017/07/03/distributing-python-modules.html">
 
 
   <meta property="og:description" content="Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using pip from GitHub.">
@@ -49,9 +35,6 @@
 
 
 
-
-
-  <meta property="og:type" content="article">
   <meta property="article:published_time" content="2017-07-03T00:00:00+02:00">
 
 
@@ -59,6 +42,7 @@
 
 
 
+<link rel="canonical" href="/dev/2017/07/03/distributing-python-modules.html">
 
 
 
@@ -66,76 +50,81 @@
 
 
 
-<!-- end SEO -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="José Manuel Martínez Martínez Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="José Manuel Martínez Martínez Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
-<!--[if lte IE 9]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
 
-<meta http-equiv="cleartype" content="on">
+
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
+
   </head>
 
-  <body class="layout--single">
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-    <div class="masthead">
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/">José Manuel Martínez Martínez</a>
-        <ul class="visible-links">
+        
+        <a class="site-title" href="/">
+          José Manuel Martínez Martínez
           
-            
-            <li class="masthead__menu-item"><a href="/cv/">CV</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="/publications/">Publications</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="/blog/">Blog</a></li>
-          
-        </ul>
-        <button><div class="navicon"></div></button>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
 
-    
+
+    <div class="initial-content">
+      
+
+
 
 
 
@@ -144,22 +133,26 @@
   <div class="sidebar sticky">
   
 
-<div itemscope itemtype="http://schema.org/Person">
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="https://avatars0.githubusercontent.com/u/2077497?v=3&s=460" alt="José Manuel Martínez Martínez" itemprop="image">
-      
+      <a href="/">
+        <img src="https://avatars0.githubusercontent.com/u/2077497?v=3&s=460" alt="José Manuel Martínez Martínez" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
-    <h3 class="author__name" itemprop="name">José Manuel Martínez Martínez</h3>
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">José Manuel Martínez Martínez</a>
+    </h3>
     
-      <p class="author__bio" itemprop="description">
-        Living between Saarbrücken, Germany and Valencia, Spain. Passionate about languages, coding, climbing, performing arts, and travelling.
-      </p>
+      <div class="author__bio p-note" itemprop="description">
+        <p>Born in Valencia 🍊🔥, Spain. Passionate about AI, ML, NLP, data, agile.</p>
+
+      </div>
     
   </div>
 
@@ -169,33 +162,11 @@
       
 
       
-        <li>
-          <a href="https://chozelinek.github.io" itemprop="url">
-            <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Website
-          </a>
-        </li>
-      
-
-      
-
-      
 
       
         <li>
-          <a href="https://twitter.com/chozelinek" itemprop="sameAs">
-            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
-          </a>
-        </li>
-      
-
-      
-
-      
-
-      
-        <li>
-          <a href="https://www.linkedin.com/in/josé-manuel-martínez-martínez-15b118b" itemprop="sameAs">
-            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          <a href="https://chozelinek.github.io" itemprop="url" rel="me">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span>
           </a>
         </li>
       
@@ -210,10 +181,28 @@
 
       
         <li>
-          <a href="https://github.com/chozelinek" itemprop="sameAs">
-            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          <a href="https://www.linkedin.com/in/josé-manuel-martínez-martínez-15b118b" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/chozelinek" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
       
 
       
@@ -242,8 +231,8 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
-      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
 -->
@@ -255,49 +244,65 @@
   </div>
 
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Distributing Python modules for development">
     <meta itemprop="description" content="Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using pip from GitHub.">
-    <meta itemprop="datePublished" content="July 03, 2017">
+    <meta itemprop="datePublished" content="2017-07-03T00:00:00+02:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Distributing Python modules for development
-</h1>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="/dev/2017/07/03/distributing-python-modules.html" itemprop="url">Distributing Python modules for development
+</a>
+          </h1>
           
-            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
 
 
-
-
-  1 minute read
-</p>
-          
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using <code class="highlighter-rouge">pip</code> from <a href="https://github.com">GitHub</a>.</p>
+        
+        <p>Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using <code class="language-plaintext highlighter-rouge">pip</code> from <a href="https://github.com">GitHub</a>.</p>
 
 <p>I learned to do it. I am collecting here some notes for future reference.</p>
 
 <p>I followed the instructions provided in the <a href="https://packaging.python.org/tutorials/distributing-packages">Python Packaging User Guide</a> from the beginning to section <a href="https://packaging.python.org/tutorials/distributing-packages/#working-in-development-mode">Working in “Development Mode”</a> included. I found very enlightening Scott Torborg’s tutorial <a href="https://python-packaging.readthedocs.io/en/latest/index.html">How To Package Your Python Code</a>.</p>
 
-<p>I am using <a href="https://github.com/chozelinek/PyCQP_interface"><code class="highlighter-rouge">PyCQP_interface</code></a> as an example of a module prepared to be distributed over GitHub.</p>
+<p>I am using <a href="https://github.com/chozelinek/PyCQP_interface"><code class="language-plaintext highlighter-rouge">PyCQP_interface</code></a> as an example of a module prepared to be distributed over GitHub.</p>
 
 <p>Basically:</p>
 
 <ol>
   <li>Produce a README file describing the package.</li>
   <li>Produce a LICENSE file.</li>
-  <li>Copy the file <a href="https://github.com/pypa/sampleproject/blob/master/setup.py"><code class="highlighter-rouge">setup.py</code></a></li>
-  <li>Modify <code class="highlighter-rouge">setup.py</code>:
+  <li>Copy the file <a href="https://github.com/pypa/sampleproject/blob/master/setup.py"><code class="language-plaintext highlighter-rouge">setup.py</code></a></li>
+  <li>Modify <code class="language-plaintext highlighter-rouge">setup.py</code>:
     <ol>
-      <li>line 17, since my README file is <code class="highlighter-rouge">README.md</code>;</li>
-      <li>line 21, <code class="highlighter-rouge">PyCQP_interface</code>, the name of the module;</li>
-      <li>line 26, <code class="highlighter-rouge">1.0.0</code>, choose the appropriate version;</li>
+      <li>line 17, since my README file is <code class="language-plaintext highlighter-rouge">README.md</code>;</li>
+      <li>line 21, <code class="language-plaintext highlighter-rouge">PyCQP_interface</code>, the name of the module;</li>
+      <li>line 26, <code class="language-plaintext highlighter-rouge">1.0.0</code>, choose the appropriate version;</li>
       <li>line 28, add a short description;</li>
       <li>line 32, add the URL to the GitHub repository;</li>
       <li>line 35, add name;</li>
@@ -305,16 +310,15 @@
       <li>line 39, license;</li>
       <li>line 63, keywords;</li>
       <li>line 77, required packages; and</li>
-      <li>add line 88, <code class="highlighter-rouge">python_requires='&gt;=3'</code> to indicate only compatible with Python 3.</li>
+      <li>add line 88, <code class="language-plaintext highlighter-rouge">python_requires='&gt;=3'</code> to indicate only compatible with Python 3.</li>
     </ol>
   </li>
 </ol>
 
-<p>Once you have <code class="highlighter-rouge">setup.py</code> ready, push to the repository and then install it in a local environment using:</p>
+<p>Once you have <code class="language-plaintext highlighter-rouge">setup.py</code> ready, push to the repository and then install it in a local environment using:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>pip install -e git+https://github.com/chozelinek/PyCQP_interface.git#egg<span class="o">=</span>pycqp-interface
-</code></pre>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-e</span> git+https://github.com/chozelinek/PyCQP_interface.git#egg<span class="o">=</span>pycqp-interface
+</code></pre></div></div>
 
 <p>And that’s it! If you have written a general purpose Python package and you would like to officially share it with the Python community, you should follow the instructions from the <a href="https://www.pypa.io/en/latest/">Python Packaging Authority</a> to make it available through the <a href="https://pypi.python.org/pypi">Python Package Index</a>.</p>
 
@@ -328,16 +332,12 @@
 
 
   
-  
-  
 
   <p class="page__taxonomy">
-    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      
-      
-      <a href="/tags/#python" class="page__taxonomy-item" rel="tag">python</a>
+      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">python</a>
     
     </span>
   </p>
@@ -349,40 +349,46 @@
 
 
   
-  
-  
 
   <p class="page__taxonomy">
-    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      
-      
-      <a href="/categories/#dev" class="page__taxonomy-item" rel="tag">dev</a>
+      <a href="/categories/#dev" class="page__taxonomy-item p-category" rel="tag">dev</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-07-03T00:00:00+02:00">July 03, 2017</time></p>
-        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2017-07-03T00:00:00+02:00">July 3, 2017</time></p>
+
       </footer>
 
       <section class="page__share">
-  
+  <h4 class="page__share-title">Share on</h4>
 
-  <a href="https://twitter.com/intent/tweet?text=Distributing Python modules for development /dev/2017/07/03/distributing-python-modules.html" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://x.com/intent/tweet?text=Distributing+Python+modules+for+development%20%2Fdev%2F2017%2F07%2F03%2Fdistributing-python-modules.html" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=/dev/2017/07/03/distributing-python-modules.html" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Fdev%2F2017%2F07%2F03%2Fdistributing-python-modules.html" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
 
-  <a href="https://plus.google.com/share?url=/dev/2017/07/03/distributing-python-modules.html" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=/dev/2017/07/03/distributing-python-modules.html" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=/dev/2017/07/03/distributing-python-modules.html" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://bsky.app/intent/compose?text=Distributing+Python+modules+for+development%20%2Fdev%2F2017%2F07%2F03%2Fdistributing-python-modules.html" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
 </section>
 
 
       
+
     </div>
 
     
@@ -390,32 +396,55 @@
 
   
   
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+  </div>
 </div>
 
+  
+</div>
 
-    <div class="page__footer">
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
 <!-- end custom footer snippets -->
-        <div class="page__footer-follow">
+        
+
+<div class="page__footer-follow">
   <ul class="social-icons">
     
+
     
+
     
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
-      <li><a href="http://github.com/chozelinek"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    <li><a href="/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2017 José Manuel Martínez Martínez. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="">José Manuel Martínez Martínez</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
       </footer>
     </div>
 
-    <script src="/assets/js/main.min.js"></script>
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
 
 
 
