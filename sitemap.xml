@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/dev/2017/07/03/distributing-python-modules.html</loc>
+<loc>/development/2017/07/03/distributing-python-modules.html</loc>
 <lastmod>2017-07-03T00:00:00+02:00</lastmod>
+</url>
+<url>
+<loc>/professional/2025/11/04/my-favourite-communities-in-valencia.html</loc>
+<lastmod>2025-11-04T10:25:00+01:00</lastmod>
 </url>
 <url>
 <loc>/blog/</loc>
