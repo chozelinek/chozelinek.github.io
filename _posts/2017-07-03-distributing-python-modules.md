@@ -1,7 +1,7 @@
 ---
 title: Distributing Python modules for development
-tags: python
-categories: dev
+tags: Python
+categories: Development
 ---
 
 Sometimes you write or (more likely to be my case) modify already existing python modules to suit your needs. If these modifications are crucial in a particular pipeline that you want others to reproduce (like in a research paper) or you are using that module over and over again, it might be a good idea to prepare the package to be installed using `pip` from [GitHub](https://github.com).

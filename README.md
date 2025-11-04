@@ -459,3 +459,5 @@ With drafts:
 bundle exec jekyll build --drafts
 bundle exec jekyll serve --drafts
 ```
+
+More references about working with Jekyll Compose [here](https://github.com/jekyll/jekyll-compose).
